@@ -27,6 +27,7 @@ header.mainHeader nav a{
 	text-decoration: none;
 	color: #ff0000;
 	padding: 0 10px;
+	transition: all .3s ease;
 }
 header.mainHeader nav a:hover{
 	background-color: #000;
@@ -57,6 +58,22 @@ section.news .newsItem{
 	background-color: #cc3333;
 	margin: 5px;
 	padding: 20px;
+	transition: transform .3s ease, box-shadow .3s ease;
+}
+section.news .newsItem:hover{
+	transform: translateY(-8px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+}
+section.news .newsItem button{
+	padding: 8px 15px;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: background-color .3s ease, color .3s ease;
+}
+section.news .newsItem button:hover{
+	background-color: #000;
+	color: #fff;
 }
 /* -------------Fin estilos de las noticias ------------- */
 
@@ -74,7 +91,8 @@ body.bodylogin{
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: url('../images/fondo.jpg') no-repeat center / cover;
+	background: #1a1a2e;
+	transition: background .5s ease;
 }
 
 .wrapper{
@@ -86,6 +104,11 @@ body.bodylogin{
 	border-radius: 10px;
 	border: 2px solid rgba(255, 255, 255, .2);
 	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	transition: transform .3s ease, box-shadow .3s ease;
+}
+.wrapper:hover{
+	transform: scale(1.02);
+	box-shadow: 0 0 25px rgba(0, 0, 0, .5);
 }
 .wrapper h1{
 	font-size: 36px;
@@ -107,7 +130,11 @@ body.bodylogin{
 	font-size: 16px;
 	color: #fff;
 	padding: 20px 45px 20px 20px;
-	
+	transition: border-color .3s ease, background-color .3s ease;
+}
+.input-box input:focus{
+	border-color: #fff;
+	background-color: rgba(255, 255, 255, .1);
 }
 .input-box input::placeholder{
 	color: #fff;
@@ -148,6 +175,12 @@ body.bodylogin{
 	cursor: pointer;
 	font-size: 16px;
 	font-weight: 600;
+	transition: background-color .3s ease, color .3s ease, transform .2s ease;
+}
+.wrapper .btn:hover{
+	background-color: #333;
+	color: #fff;
+	transform: translateY(-2px);
 }
 .wrapper .register-link{
 	font-size: 14px;
@@ -163,3 +196,28 @@ body.bodylogin{
 	text-decoration: underline;
 }
 /* -------------Fin estilos del login de la app ------------- */
+
+
+/* -------------Media queries ------------- */
+
+/* Pantallas de 450px */
+@media (max-width: 450px){
+	body.bodylogin{
+		background: #333;
+	}
+	.wrapper{
+		width: 90%;
+		padding: 20px;
+	}
+	.wrapper h1{
+		font-size: 28px;
+	}
+}
+
+/* Pantallas de 800px */
+@media (min-width: 800px){
+	body.bodylogin{
+		background: #1a1a2e url('../images/fondo.jpg') no-repeat center / cover;
+	}
+}
+/* -------------Fin media queries ------------- */
